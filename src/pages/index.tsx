@@ -1,31 +1,41 @@
 import { type NextPage } from "next";
+import { Roboto_Mono } from 'next/font/google';
+import clsx from 'clsx';
 import Head from "next/head";
-import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
-
+import { useDarkMode } from "~/stores/DarkMode";
+import DarkMode from "~/components/DarkMode";
 import { api } from "~/utils/api";
+
+const font = Roboto_Mono({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
+  const darkMode = useDarkMode(state => state.darkMode);
 
   return (
-    <>
+    <div className={clsx(
+      font.className,
+      darkMode && "dark"
+      )
+    }>
       <Head>
         <title>Cody Payne</title>
         <meta name="description" content="Software Developer" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#627950] to-[#c2eea5]">
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-          <h1 className="text-5xl font-extrabold tracking-tight text-[#6b450c] sm:text-[5rem]">
+      <main className="flex min-h-screen justify-center">
+        <div className="container flex items-start justify-between max-w-5xl">
+          <p className="text-light-primary sm:text-[2rem] font-medium">
             Cody Payne
-          </h1>
-          <div className="flex flex-col items-center gap-2">
-            <AuthShowcase />
-          </div>
+          </p>
+          <DarkMode />
         </div>
       </main>
-    </>
+    </div>
   );
 };
 

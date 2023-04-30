@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base{
+    main {
+        @apply bg-light-background dark:bg-dark-background
+    }
+    h1 {
+        @apply text-light-primary dark:text-dark-primary
+    }
+    h2 {
+        @apply text-light-secondary dark:text-dark-secondary
+    }
+    h3 {
+        @apply text-light-tertiary dark:text-dark-tertiary
+    }
+    p {
+        @apply text-light-primary dark:text-dark-primary 
+    }
+}
