@@ -10,8 +10,8 @@ const DarkMode = () => {
     <button onClick={() => update(!darkMode)}>
       {
         darkMode
-          ? <FaRegMoon className="text-dark-primary w-10 h-10 mx-1 my-1 hover:text-dark-primary-light" />
-          : <FaSun className="text-light-secondary w-10 h-10 mx-1 my-1 hover:text-light-secondary-dark" />
+          ? <FaRegMoon className="text-dark-primary w-7 h-7 sm:w-10 sm:h-10 mx-1 my-1 hover:text-dark-primary-light" />
+          : <FaSun className="text-light-secondary w-7 h-7 sm:w-10 sm:h-10 mx-1 my-1 hover:text-light-secondary-dark" />
       }
     </button>
   )
