@@ -5,6 +5,7 @@ import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useDarkMode } from "~/stores/DarkMode";
 import DarkMode from "~/components/DarkMode";
+import NameHeader from '~/components/NameHeader';
 import { api } from "~/utils/api";
 
 const font = Roboto_Mono({
@@ -28,10 +29,8 @@ const Home: NextPage = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <main className="flex min-h-screen justify-center">
-        <div className="container flex items-start justify-between max-w-5xl">
-          <p className="text-light-primary sm:text-[2rem] font-medium">
-            Cody Payne
-          </p>
+        <div className="container flex items-start justify-between max-w-5xl m-2">
+          <NameHeader />
           <DarkMode />
         </div>
       </main>

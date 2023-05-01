@@ -1,6 +1,5 @@
-
-import MoonIcon from '@iconscout/react-unicons/icons/uil-moon';
-import SunIcon from '@iconscout/react-unicons/icons/uil-sun';
+import { FaSun} from 'react-icons/fa';
+import { FaRegMoon } from 'react-icons/fa';
 import { useDarkMode } from "~/stores/DarkMode";
 
 const DarkMode = () => {
@@ -11,8 +10,8 @@ const DarkMode = () => {
     <button onClick={() => update(!darkMode)}>
       {
         darkMode
-          ? <MoonIcon className="text-dark-primary w-10 h-10 mx-1 my-1 hover:text-dark-primary-light" />
-          : <SunIcon className="text-light-secondary w-10 h-10 mx-1 my-1 hover:text-light-secondary-dark" />
+          ? <FaRegMoon className="text-dark-primary w-10 h-10 mx-1 my-1 hover:text-dark-primary-light" />
+          : <FaSun className="text-light-secondary w-10 h-10 mx-1 my-1 hover:text-light-secondary-dark" />
       }
     </button>
   )
