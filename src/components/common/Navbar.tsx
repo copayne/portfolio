@@ -16,7 +16,7 @@ const Navbar = () => (
       NAVBAR.map(menuItem => (
         <p
           key={menuItem.id}
-          className="mx-2 px-1 text-xs sm:text-sm underline cursor-pointer"
+          className="mx-2 px-1 text-xs sm:text-lg underline cursor-pointer"
         >
           <Link href={`#${menuItem.label}`}>
             {menuItem.label}

@@ -18,9 +18,9 @@ export default {
             'light': '#E97749',
           },
           'tertiary': {
-            DEFAULT: '#17758C',
-            'dark': '#0E4958',
-            'light': '#1FA1C1',
+            DEFAULT: '#2F2175',
+            'dark': '#201650',
+            'light': '#4631AF',
           },
           'background': '#EAECE1',
         },
@@ -42,6 +42,9 @@ export default {
           },
           'background': '#232B36',
         },
+      },
+      boxShadow: {
+        'hard': '-10px -10px',
       },
     },
   },
