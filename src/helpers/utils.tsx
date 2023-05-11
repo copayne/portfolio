@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import FadeInText from '~/components/common/FadeInText';
 
 const getTextChunks = (content: string, highlights: Array<string>) => {
     // remove any highlights that aren't present in the text content
@@ -30,10 +30,10 @@ const getTextChunks = (content: string, highlights: Array<string>) => {
 
 export const getHighlightedText = (content: string, highlights: Array<string>) =>
   getTextChunks(content, highlights).map(chunk => (
-    <span
+    <FadeInText
       key={chunk}
-      className={clsx(highlights.includes(chunk) && 'text-light-tertiary dark:text-dark-secondary')}
-    >
-      {chunk}
-    </span>
+      alwaysVisible={highlights.includes(chunk)}
+
+      text={chunk}
+    />
   ));

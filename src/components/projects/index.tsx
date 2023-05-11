@@ -2,6 +2,7 @@ import ContentContainer from '~/components/common/ContentContainer';
 
 const PROJECTS = ['ExactHire', 'That Over There', 'Project 3'];
 
+
 const Projects = () => (
   <ContentContainer id="projects">
     <div className="mx-auto">
