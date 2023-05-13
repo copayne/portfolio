@@ -31,14 +31,14 @@ const Splash = () => {
       easing: easings.easeOutCubic,
     }
   }), []);
-  const line1Intersection = useIntersection(line1, {
+  const trigger = useIntersection(line1, {
     root: null,
-    rootMargin: '-200px 0px 0px 0px',
-    threshold: 0,
+    rootMargin: '0px',
+    threshold: 0.95,
   });
-
+  
   useEffect(() => {
-    if (line1Intersection?.intersectionRatio < 1) {
+    if (trigger?.intersectionRatio < 1) {
       animate1({
         height: "100%",
       });
@@ -48,14 +48,14 @@ const Splash = () => {
       });
     }
   }, [
-    line1Intersection?.intersectionRatio,
+    trigger?.intersectionRatio,
     animate1,
     animate2,
   ]);
   
   return (
     <ContentContainer id="splash">
-      <div className="container flex justify-end items-center mr-[5%] h-[85vh]">
+      <div ref={line1} className="container flex justify-end items-center mr-[5%] h-[85vh]">
         <div className="container flex flex-col items-end">
           <p className="w-96 text-sm sm:text-2xl bold">
             { getHighlightedText(SPLASH_CONTENT, ['stable', 'scalable', 'functional']) }
