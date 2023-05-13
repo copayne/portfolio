@@ -1,4 +1,4 @@
-import React,  {
+import React, {
   useEffect,
   useState,
   useRef,
@@ -24,7 +24,7 @@ const FadeInText: React.FC<Props> = ({ text, alwaysVisible = false }) => {
     from: { opacity: alwaysVisible ? 1 : 0 },
     to: { opacity: isVisible ? 1 : 0 },
     config: {
-      duration: 2500,
+      duration: 2000,
       loop: false,
     },
   });
