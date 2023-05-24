@@ -2,6 +2,7 @@ import React, {
   useEffect,
   useRef,
 } from 'react';
+import Image from 'next/image';
 import {
   animated,
   easings,
@@ -9,7 +10,14 @@ import {
 } from '@react-spring/web';
 import { useIntersection } from 'react-use';
 import ContentContainer from '~/components/common/ContentContainer';
+import FadeInContent  from '~/components/common/FadeInContent';
 import { getHighlightedText } from '~/helpers/utils';
+import reactLogo from '../../../public/react-logo.png';
+import gitLogo from '../../../public/git-logo.svg';
+import htmlLogo from '../../../public/html-logo.png';
+import reduxLogo from '../../../public/redux-logo.png';
+import sqlLogo from '../../../public/sql-logo.png';
+import typescriptLogo from '../../../public/typescript-logo.svg';
 
 const ABOUT_CONTENT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce porta rhoncus lectus, at lobortis magna semper id. Suspendisse leo justo, cursus et pellentesque id, rhoncus vitae risus.";
 
@@ -66,6 +74,7 @@ const About = () => {
     animate3,
   ]);
 
+  // TODO: add skills section - Node, PHP, Git, Next?
   return (
     <ContentContainer id="aboutContainer">
       <div className="container flex flex-col min-h-[85vh]">
@@ -75,7 +84,7 @@ const About = () => {
           </div>
           <div className="mt-[5%] ml-[5%]">
             <div className="container flex flex-col items-start">
-            <p className="text-sm sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-6">
+            <p className="text-sm sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-5">
               About
             </p>
               <div className="text-sm sm:text-xl w-1/2">
@@ -84,9 +93,12 @@ const About = () => {
             </div>
             <br />
             <div ref={line1} className="container flex flex-col items-start">
-              <p  className="text-sm sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-6">
+              <p  className="text-sm sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-5">
                 Skills
               </p>
+              <FadeInContent>
+                <Skills />
+              </FadeInContent>
             </div>
           </div>
         </div>
@@ -102,3 +114,51 @@ const About = () => {
 }
 
 export default About;
+
+const SKILLS = [
+  {
+    src: htmlLogo,
+    label: 'html5/css3/js'
+  },
+  {
+    src: reactLogo,
+    label: 'react',
+  },
+  {
+    src: reduxLogo,
+    label: 'redux',
+  },
+  {
+    src: typescriptLogo,
+    label: 'typescript',
+  },
+  {
+    src: gitLogo,
+    label: 'git',
+  },
+  {
+    src: sqlLogo,
+    label: 'sql',
+  },
+];
+
+const Skills = () => (
+  <div className="container flex items-center flex-wrap max-w-sm">
+    {
+      SKILLS.map(skill => (
+        <div
+          key={skill.label}
+          className="w-20 flex flex-col justify-center items-center my-2 mx-4"
+        >
+          <Image
+            src={skill.src}
+            height="46"
+            width="46"
+            alt={skill.label}
+          />
+          <p className="text-light-secondary dark:text-dark-secondary text-sm">{skill.label}</p>
+        </div>
+      ))
+    }
+  </div>
+);

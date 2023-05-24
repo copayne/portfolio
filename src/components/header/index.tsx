@@ -12,7 +12,7 @@ const Header: NextPage = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsMinimized(window.scrollY > 120);
+      setIsMinimized(window.scrollY > 95.5);
     };
 
     handleScroll();
@@ -23,12 +23,13 @@ const Header: NextPage = () => {
     };
   }, []);
 
+  // TODO: update the transition between sizes to use translate for a smoother animation
   return (
     <div
       className={clsx(
         "sticky top-0 m-auto flex justify-between p-2 transition-all",
         !isMinimized && 'max-w-full sm:max-w-screen-lg items-start',
-        isMinimized && "max-w-full items-center px-4",
+        isMinimized && "max-w-full xl:max-w-screen-2xl items-center px-4",
       )}
     >
       <NamePlate size={isMinimized ? 'small' : 'medium' } />
