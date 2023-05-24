@@ -74,7 +74,6 @@ const About = () => {
     animate3,
   ]);
 
-  // TODO: add skills section - Node, PHP, Git, Next?
   return (
     <ContentContainer id="aboutContainer">
       <div className="container flex flex-col min-h-[85vh]">
