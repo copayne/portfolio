@@ -1,4 +1,4 @@
-import FadeInText from '~/components/common/FadeInText';
+import FadeInContent from '~/components/common/FadeInContent';
 
 const getTextChunks = (content: string, highlights: Array<string>) => {
     // remove any highlights that aren't present in the text content
@@ -30,10 +30,10 @@ const getTextChunks = (content: string, highlights: Array<string>) => {
 
 export const getHighlightedText = (content: string, highlights: Array<string>) =>
   getTextChunks(content, highlights).map(chunk => (
-    <FadeInText
+    <FadeInContent
       key={chunk}
       alwaysVisible={highlights.includes(chunk)}
-
-      text={chunk}
-    />
+    >
+      {chunk}
+    </FadeInContent>
   ));

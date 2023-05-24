@@ -8,11 +8,11 @@ import { useIntersection } from 'react-use';
 import clsx from 'clsx';
 
 interface Props {
-  text: string,
   alwaysVisible?: boolean,
+  children: React.ReactNode,
 }
 
-const FadeInText: React.FC<Props> = ({ text, alwaysVisible = false }) => {
+const FadeInContent: React.FC<Props> = ({ children, alwaysVisible = false }) => {
   const [isVisible, setIsVisible] = useState(alwaysVisible);
   const ref = useRef<HTMLDivElement>(null);
   const intersection = useIntersection(ref, {
@@ -24,7 +24,7 @@ const FadeInText: React.FC<Props> = ({ text, alwaysVisible = false }) => {
     from: { opacity: alwaysVisible ? 1 : 0 },
     to: { opacity: isVisible ? 1 : 0 },
     config: {
-      duration: 2000,
+      duration: 1500,
       loop: false,
     },
   });
@@ -41,10 +41,10 @@ const FadeInText: React.FC<Props> = ({ text, alwaysVisible = false }) => {
         'text-light-primary dark:text-dark-primary',
         alwaysVisible && 'text-light-tertiary dark:text-dark-secondary',
       )}>
-        {text}
+        {children}
       </span>
     </animated.span>
   )
 }
 
-export default FadeInText;
+export default FadeInContent;
