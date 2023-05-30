@@ -11,6 +11,7 @@ import {
 import { useIntersection } from 'react-use';
 import ContentContainer from '~/components/common/ContentContainer';
 import FadeInContent  from '~/components/common/FadeInContent';
+import IconRow from '~/components/common/IconRow';
 import { getHighlightedText } from '~/helpers/utils';
 import reactLogo from '../../../public/react-logo.png';
 import gitLogo from '../../../public/git-logo.svg';
@@ -96,7 +97,7 @@ const About = () => {
                 Skills
               </p>
               <FadeInContent>
-                <Skills />
+                <IconRow icons={SKILLS} />
               </FadeInContent>
             </div>
           </div>
@@ -116,48 +117,33 @@ export default About;
 
 const SKILLS = [
   {
+    alt: 'html5/css3/js logo',
     src: htmlLogo,
     label: 'html5/css3/js'
   },
   {
+    alt: 'react logo',
     src: reactLogo,
     label: 'react',
   },
   {
+    alt: 'redux logo',
     src: reduxLogo,
     label: 'redux',
   },
   {
+    alt: 'typescript logo',
     src: typescriptLogo,
     label: 'typescript',
   },
   {
+    alt: 'git logo',
     src: gitLogo,
     label: 'git',
   },
   {
+    alt: 'sql logo',
     src: sqlLogo,
     label: 'sql',
   },
 ];
-
-const Skills = () => (
-  <div className="container flex items-center flex-wrap max-w-sm">
-    {
-      SKILLS.map(skill => (
-        <div
-          key={skill.label}
-          className="w-20 flex flex-col justify-center items-center my-2 mx-4"
-        >
-          <Image
-            src={skill.src}
-            height="46"
-            width="46"
-            alt={skill.label}
-          />
-          <p className="text-light-secondary dark:text-dark-secondary text-sm">{skill.label}</p>
-        </div>
-      ))
-    }
-  </div>
-);
