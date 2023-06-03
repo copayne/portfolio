@@ -5,7 +5,7 @@ interface DarkMode {
     update: (newValue : boolean) => void
 }
 
-export const useDarkMode = create<DarkMode>(( set ) => ({
+export const useDarkMode = create<DarkMode>()(( set ) => ({
     darkMode: false,
     update: (newValue : boolean) => set({ darkMode: newValue }),
 }));
