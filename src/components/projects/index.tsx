@@ -9,8 +9,8 @@ import {
 } from '@react-spring/web';
 import { useIntersection } from 'react-use';
 import ContentContainer from '~/components/common/ContentContainer';
-
-const PROJECTS = ['ExactHire', 'That Over There', 'Project 3'];
+import { ProjectDetail } from './ProjectDetail';
+import { ProjectsMenu } from './ProjectsMenu';
 
 const Projects = () => {
   const line1 = useRef<HTMLDivElement>(null);
@@ -143,22 +143,12 @@ const Projects = () => {
             <animated.div className="w-[2px] bg-light-primary dark:bg-dark-primary" ref={line3} style={draw3} />
           </div>
           <div className="w-full flex flex-col items-center">
-            <p className="text-center text-sm sm:text-5xl text-light-primary dark:text-dark-primary font-thin mb-6 mt-4">
+            <p className="text-center text-sm sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-6 mt-4">
               Projects
             </p>
-            <div className="container flex flex-col sm:flex-row sm:flex-nowrap mt-5 mb-10 justify-center">
-              {
-                PROJECTS.map(project => (
-                  <div
-                    key={project}
-                    className="w-64 h-64 m-4 bg-light-primary dark:bg-dark-tertiary shadow-hard shadow-light-tertiary dark:shadow-dark-secondary"
-                  >
-                    <p className="text-light-background dark:text-dark-background">
-                      {project}
-                    </p>
-                  </div>
-                ))
-              }
+            <div className="container flex w-full">
+              <ProjectsMenu/>
+              <ProjectDetail />
             </div>
           </div>
           <div className="w-[2px]">
