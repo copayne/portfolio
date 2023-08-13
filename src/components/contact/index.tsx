@@ -24,7 +24,7 @@ const CONTACT_DETAILS = [
 
 const Contact = () => (
   <div className="container flex flex-col items-center w-full h-full">
-    <p  className="text-sm sm:text-4xl text-light-background dark:text-dark-background font-thin mt-2 mb-10">
+    <p  className="text-3xl sm:text-4xl text-light-background dark:text-dark-background font-thin mt-2 mb-10">
       Contact
     </p>
     <IconRow

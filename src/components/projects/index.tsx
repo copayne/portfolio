@@ -5,7 +5,7 @@ import { ProjectsMenu } from './ProjectsMenu';
 
 const Projects = () => (
   <ContentContainer id="projects">
-    <div className="h-[85vh] sm:mx-auto">
+    <div className="h-[100vh] sm:h-[85vh] sm:mx-auto">
       <div className="flex">
         <div className="w-1/2 h-[2px] rotate-180 hidden sm:block">
           <div className="h-[2px] w-full bg-light-primary dark:bg-dark-primary" />

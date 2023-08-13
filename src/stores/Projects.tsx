@@ -50,7 +50,7 @@ const PROJECTS: Array<Project> = [
     summary: [
       {
           title: 'Front-End Overhaul',
-          text: 'lead implementation of new UI and maintainble code restructure.',
+          text: 'lead implementation of new UI and maintainable code restructure.',
       },
       {
           title: 'Collaborative Innovation',
@@ -93,7 +93,7 @@ const PROJECTS: Array<Project> = [
     skills: SKILLS,
     summary: [
       {
-          title: 'Versative Builder',
+          title: 'Versatile Builder',
           text: 'built using konva and material-ui, form builder provides a performant and intuitive experience.',
       },
       {
