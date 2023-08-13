@@ -9,11 +9,11 @@ export const ProjectDetail = () => {
   const project = projects.find(p => p.id === active);
 
   return (
-    <div className="container flex flex-col w-3/4 p-5">
+    <div className="container flex flex-col w-full sm:w-3/4 p-2 sm:p-5">
       <div className="container flex">
         {
           project?.picture && (
-            <div className="w-[685px] h-[370px]">
+            <div className="w-full h-full sm:w-[685px] sm:h-[370px]">
               <Image
                 key={project.picture.alt}
                 alt={project.picture.alt}
@@ -23,15 +23,15 @@ export const ProjectDetail = () => {
           )
         }
       </div>
-      <div className="container flex mt-4 h-[100px]">
-        <div className="w-3/4 mr-8">
-          <p className="text-sm text-light-secondary dark:text-dark-secondary mb-1">Summary</p>
+      <div className="container flex flex-col sm:flex-row mt-4 h-[100px]">
+        <div className="w-full sm:w-3/4 sm:mr-8">
+          <p className="sm:text-sm text-light-secondary dark:text-dark-secondary mb-1">Summary</p>
           <ul className="list-disc">
             {
               project?.summary.map(item => (
                 <li
                   key={item.title}
-                  className="text-[10px] text-light-primary dark:text-dark-primary"
+                  className="mt-2 mb-2 sm:mt-0 sm:mb-0 text-sm sm:text-xs text-light-primary dark:text-dark-primary"
                 >
                   <span className="font-bold">{item.title}</span>: {item.text}
                 </li>
@@ -39,8 +39,8 @@ export const ProjectDetail = () => {
             }
           </ul>
         </div>
-        <div>
-          <p className="text-sm text-light-secondary dark:text-dark-secondary mb-2">Highlight Skills</p>
+        <div className="mt-5 sm:mt-0">
+          <p className="text-md sm:text-sm text-light-secondary dark:text-dark-secondary mb-2">Highlight Skills</p>
           <HighlightSkills skills={project.skills} />
         </div>
       </div>

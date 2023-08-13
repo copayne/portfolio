@@ -14,23 +14,23 @@ const ABOUT_CONTENT = "Experienced software developer collaborating approach to 
 
 const About = () => (
   <ContentContainer id="aboutContainer">
-    <div className="container flex flex-col min-h-[85vh]">
+    <div className="container flex flex-col sm:min-h-[85vh]">
       <div className="container flex">
         <div id="about" className="h-[70vh] w-[2px]">
-          <div className="h-full w-[2px] bg-light-primary dark:bg-dark-primary" />
+          <div className="h-full w-[2px] bg-light-primary dark:bg-dark-primary hidden sm:block" />
         </div>
-        <div className="mt-[3%] ml-[5%]">
-          <div className="container flex flex-col items-start">
-          <p className="text-sm sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-5">
+        <div className="mt-0 ml-0 sm:mt-[3%] sm:ml-[5%]">
+          <div className="container flex flex-col items-center sm:items-start">
+          <p className="text-3xl sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-5">
             About
           </p>
-            <div className="text-sm sm:text-xl w-1/2">
+            <div className="text-md sm:text-xl w-11/12 sm:w-1/2 text-">
               { getHighlightedText(ABOUT_CONTENT, ['collaborating', 'captivating', 'lasting', 'impression']) }
             </div>
           </div>
           <br />
-          <div className="container flex flex-col items-start">
-            <p  className="text-sm sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-5">
+          <div className="container flex flex-col items-center sm:items-start mt-8 sm:mt-0">
+            <p  className="text-3xl sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-5">
               Skills
             </p>
             <FadeInContent>
@@ -39,11 +39,11 @@ const About = () => (
           </div>
         </div>
       </div>
-      <div className="w-full h-[2px]">
+      <div className="w-full h-[2px] hidden sm:block">
         <div className="h-[2px] w-1/2 bg-light-primary dark:bg-dark-primary" />
       </div>
-      <div className="w-1/2 h-[20vh] flex justify-end">
-        <div className="w-[2px] bg-light-primary dark:bg-dark-primary" />
+      <div className="w-1/2 h-[20vh] hidden sm:flex justify-end">
+        <div className="w-[2px] bg-light-primary dark:bg-dark-primary " />
       </div>
     </div>
   </ContentContainer>
