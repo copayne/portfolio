@@ -10,23 +10,21 @@ import reactLogo from '../../public/react-logo.png';
 import reduxLogo from '../../public/redux-logo.png';
 import sqlLogo from '../../public/sql-logo.png';
 
-const PICTURES: Array<Icon> = [
-    {
-        alt: 'Career Site',
-        src: careerSite,
-        thumb: careerSiteThumbnail,
-    },
-    {
-        alt: 'Search View',
-        src: searchView,
-        thumb: searchViewThumbnail,
-    },
-    {
-        alt: 'applicationView',
-        src: applicationView,
-        thumb: applicationViewThumbnail,
-    },
-];
+const CAREER_SITE_PIC = {
+  alt: 'Career Site',
+  src: careerSite,
+  thumb: careerSiteThumbnail,
+};
+const ATS_UI_PIC = {
+  alt: 'Search View',
+  src: searchView,
+  thumb: searchViewThumbnail,
+};
+const FORM_BUILDER_PIC = {
+  alt: 'applicationView',
+  src: applicationView,
+  thumb: applicationViewThumbnail,
+};
 
 const SKILLS: Array<Icon> = [
     {
@@ -44,59 +42,94 @@ const SKILLS: Array<Icon> = [
   ];
 
 const PROJECTS: Array<Project> = [
-    {
-        id: 'EXACTHIRE',
-        label: 'ExactHire ATS',
-        pictures: PICTURES,
-        skills: SKILLS,
-        summary: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            'Phasellus diam mi, consequat at interdum sed, varius sed lorem.',
-            'Ut sollicitudin sollicitudin turpis, at sagittis enim maximus eget.',
-            'Aenean tincidunt leo lectus, sed gravida tortor volutpat et. Curabitur auctor euismod ligula ut varius.',
-        ],
-    },
-    {
-        id: 'THAT_OVER_THERE',
-        label: 'That Over There',
-        pictures: [PICTURES[1]],
-        skills: [SKILLS[2], SKILLS[0]],
-        summary: [
-            'Phasellus in ipsum fringilla justo interdum tincidunt.',
-            'Cras non mi lectus. Sed mi augue, luctus ut lobortis at, ullamcorper ac nibh.',
-            'Ut a lorem malesuada, dignissim odio quis, posuere magna.',
-        ],
-    },
-    {
-        id: 'PROJECT_3',
-        label: 'Project Three',
-        pictures: [PICTURES[2], PICTURES[0]],
-        skills: [SKILLS[1]],
-        summary: [
-            'Curabitur dapibus tortor sit amet ipsum tempor sollicitudin.',
-            'Pellentesque viverra egestas sodales. Praesent laoreet luctus tellus, id varius nunc dictum vel.',
-            'Sed nec lorem fringilla, elementum mauris eget, lobortis nulla. Quisque laoreet lobortis est, eget.',
-        ],
-    },
+  {
+    id: 'EXACTHIRE_ATS',
+    label: 'ExactHire ATS 2.0',
+    picture: ATS_UI_PIC,
+    skills: SKILLS,
+    summary: [
+      {
+          title: 'Front-End Overhaul',
+          text: 'lead implementation of new UI and maintainble code restructure.',
+      },
+      {
+          title: 'Collaborative Innovation',
+          text: 'worked closely with designer and executives to shape a visually appealing and user-friendly interface.',
+      },
+      {
+          title: 'Elevated Performance and Usability',
+          text: 'snappy and intuitive diesgn led to use satisfacation and productivity gains.',
+      }
+    ],
+  },
+  {
+    id: 'EXACTHIRE_CAREER_SITE',
+    label: 'ExactHire Career Site',
+    picture: CAREER_SITE_PIC,
+    skills: SKILLS,
+    summary: [
+      {
+          title: 'Frictionless Features',
+          text: 'applicants can apply to one or many jobs, communicate with hiring teams and complete audio interviews seamlessly.',
+      },
+      {
+          title: 'Intuitive Building',
+          text: 'created a WYSIWIG editor with live preview for maximum customization.',
+      },
+      {
+          title: 'Any Device, Anywhere',
+          text: 'mobile responsive for most flexible experience.',
+      },
+      {
+          title: 'Effective Results',
+          text: '400,000+ applications received for over 200 clients.',
+      }
+    ],
+  },
+  {
+    id: 'EXACTHIRE_FORM_BUILDER',
+    label: 'ExactHire Form Builder',
+    picture: FORM_BUILDER_PIC,
+    skills: SKILLS,
+    summary: [
+      {
+          title: 'Versative Builder',
+          text: 'built using konva and material-ui, form builder provides a performant and intuitive experience.',
+      },
+      {
+          title: 'Seamless Mobile',
+          text: 'complete forms seamlessly between desktop and mobile.',
+      },
+      {
+          title: 'Dynamic Workflows',
+          text: 'allow flexibility of multi-stage workflows applied to forms.',
+      },
+    ],
+  },
 ];
 
+export interface Summary {
+  title: string,
+  text: string,
+}
+
 export interface Project {
-    id: string
-    label: string
-    pictures: Array<Icon>
-    skills: Array<Icon>
-    summary: Array<string>
+  id: string
+  label: string
+  picture: Icon
+  skills: Array<Icon>
+  summary: Array<Summary>
 }
 
 export interface Projects {
-    active: string,
-    projects: Array<Project>
-    update: (newValue: string) => void
+  active: string,
+  projects: Array<Project>
+  update: (newValue: string) => void
 }
 
 export const useProjects = create<Projects>()(( set ) => ({
-    // initial state
-    active: 'EXACTHIRE',
-    projects: PROJECTS,
-    update: (newValue: string) => set({ active: newValue }),
+  // initial state
+  active: 'EXACTHIRE_ATS',
+  projects: PROJECTS,
+  update: (newValue: string) => set({ active: newValue }),
 }));
