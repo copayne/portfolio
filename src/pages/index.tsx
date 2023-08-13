@@ -19,6 +19,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={clsx(
+      'p-2 sm:p-0',
       font.className,
       darkMode && 'dark bg-dark-background',
       !darkMode && 'bg-light-background',
@@ -30,7 +31,7 @@ const Home: NextPage = () => {
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <Header />
-      <main className="flex min-h-screen flex-col items-center overflow-y-hidden">
+      <main className="flex min-h-screen flex-col items-center overflow-hidden">
         <Splash />
         <About />
         <Projects />

@@ -20,7 +20,7 @@ const IconRow: React.FC<IconRow> = ({ icons, justify = '', size = 46 }) => (
   <div
     className={
       clsx(
-        "container flex items-center flex-wrap max-w-sm",
+        "container flex justify-center sm:justify-start items-center flex-wrap max-w-sm",
         justify === 'center' && 'justify-center',
       )
     }
