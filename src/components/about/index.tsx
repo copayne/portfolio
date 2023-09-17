@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import React from 'react';
 import ContentContainer from '~/components/common/ContentContainer';
 import FadeInContent  from '~/components/common/FadeInContent';
