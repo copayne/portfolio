@@ -39,10 +39,14 @@ export const ProjectDetail = () => {
             }
           </ul>
         </div>
-        <div className="mt-5 sm:mt-0">
-          <p className="text-md sm:text-sm text-light-secondary dark:text-dark-secondary mb-2">Highlight Skills</p>
-          <HighlightSkills skills={project.skills} />
-        </div>
+        {
+          project?.skills && (
+            <div className="mt-5 sm:mt-0">
+              <p className="text-md sm:text-sm text-light-secondary dark:text-dark-secondary mb-2">Highlight Skills</p>
+              <HighlightSkills skills={project.skills} />
+            </div>
+          )
+        }
       </div>
     </div>
   )
