@@ -15,7 +15,7 @@ const ABOUT_CONTENT = "Experienced software developer collaborating approach to 
 
 const About = () => (
   <ContentContainer id="aboutContainer">
-    <div className="container flex flex-col sm:min-h-[85vh]">
+    <div className="container flex flex-col sm:min-h-[85vh] border-light-primary dark:border-dark-primary">
       <div className="container flex">
         <div id="about" className="h-[70vh] w-[2px]">
           <div className="h-full w-[2px] bg-light-primary dark:bg-dark-primary hidden sm:block" />
