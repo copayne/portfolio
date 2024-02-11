@@ -15,7 +15,7 @@ const ABOUT_CONTENT = "Experienced software developer collaborating approach to 
 
 const About = () => (
   <ContentContainer id="aboutContainer">
-    <div className="container flex flex-col sm:min-h-[85vh] border-light-primary dark:border-dark-primary">
+    <div className="container flex flex-col sm:min-h-[85vh]">
       <div className="container flex">
         <div id="about" className="h-[70vh] w-[2px]">
           <div className="h-full w-[2px] bg-light-primary dark:bg-dark-primary hidden sm:block" />
@@ -25,7 +25,7 @@ const About = () => (
           <p className="text-3xl sm:text-4xl text-light-primary dark:text-dark-primary font-thin mb-5">
             About
           </p>
-            <div className="text-md sm:text-xl w-11/12 sm:w-1/2 text-">
+            <div className="text-md sm:text-xl w-11/12 sm:w-1/2">
               { getHighlightedText(ABOUT_CONTENT, ['collaborating', 'captivating', 'lasting', 'impression']) }
             </div>
           </div>

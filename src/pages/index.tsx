@@ -26,9 +26,9 @@ const Home: NextPage = () => {
     )}
     >
       <Head>
-        <title>Cody Payne</title>
+        <title>Cody Payne - Developer</title>
         <meta name="description" content="Software Developer" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/letter-c.ico" />
       </Head>
       <Header />
       <main className="flex min-h-screen flex-col items-center overflow-hidden">
