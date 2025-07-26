@@ -1,0 +1,12 @@
+/* App-specific styles */
+
+/* Override root styling for portfolio layout */
+#root {
+  isolation: isolate;
+  min-height: 100vh;
+}
+
+/* App component styles */
+.app {
+  min-height: 100vh;
+}
