@@ -50,5 +50,8 @@
   },
   "ct3aMetadata": {
     "initVersion": "7.12.1"
+  },
+  "engines": {
+    "node": "22.x"
   }
 }
